@@ -1,0 +1,25 @@
+BY SUBMITTING THIS FILE TO CARMEN, I CERTIFY THAT I STRICTLY ADHERED TENURES OF THE OHIO STATE UNIVERSITY'S ACADEMIC INTEGRITY POLICY. THIS IS THE README FILE FOR LAB 7
+
+Author: Yoyi Liao
+
+total time:
+
+14.5
+
+general comments:
+
+I don't think this lab is hard in a "code is complicated way." Having the C program reference, I could see that the program itself is not complicated. However, it's defitnetly a tedious work to convert it from C to Assembly. A single line in C could easily translate into 5+ lines of Assembly code, which makes it seems terrifying. 
+
+I also have a little posted note written down what register in Assembly holds what variable in C. I found it super helpful because now I don't have to scrolling up and down my codes to figure out what am I working on right now. It make things a lot easier and more organized.
+
+bugs and debugs:
+
+When I was first trying to get "count" from argv[2], I dereferenced it twice in the hope of getting the actual numeric value of it. I forgot that argv stores everything as characters and is itself a character array. Hence, I really should only dereferenced argv once. 
+
+I initially found this bug because my program keep seg faulting. I then run gdb and set a break point at main. As I step through my program, I found the value of %rdi (where argv[2] is suppose to be at when calling atoi since it's the first parameter) does not contain the value I want. I was initially expecting a unmeric value but quickly realized that I'm not suppose to be expecting that to begin with.
+
+Another bug that stupmed me, two of my friends, and a TA is that there was a period of time my program will seg fault at fscanf call. After running the gdb, we see that memories and files are being passed to the right places with right values. We had no idea why it was seg faulting. It was not until that I have talked to professor Jones. She suggested that it was probably seg faulting because I was pushing an odd number of registers (I was). fscanf requires things to be 16 bytes align. By pushing odd numbers of registers, my stack is no longer 16 bytes align and thus fscanf is not corporating 
+
+Another bug happened in printlines. Instead of printing out the actual value of sum, difference, etcs, it's printing out the address of where thoses things are at. This bug is fixed after I changed my code from leaq to movq
+
+Another bug is that my difference will have the right value, but opposite sign. I initially suspect that it was because I'm extending it to long when I did the computation, but have it stays as int when I print it out. After I run the gdb, however, I found that it's actually because I have my source and destination flipped.

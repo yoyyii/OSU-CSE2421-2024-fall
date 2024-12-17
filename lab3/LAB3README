@@ -1,0 +1,14 @@
+1.
+BY SUBMITTING THIS FILE TO CARMEN, I CERTIFY THAT I HAVE STRICTLY ADHERED TO THE TENURES OF THE OHIO STATE UNIVERSITY'S ACADEMIC INTEGRITY POLICY WITH RESPECT TO THIS ASSIGNMENT
+THIS IS THE README FILE FOR LAB 3
+
+Student name: Yoyi Liao
+
+2.
+Time it took for me to complete the lab: 19.5
+
+3. 
+One general comment is that I didn't really planned my thought well before beginning implementing the program. As a result, I have to constantly go back to my header file and functions to change my return type and parameter passed in. It consumed a lot of time that could've been avoid if I planned more throughout at the beginning. It also created more bug because there are a lot of things that I have to go find and fix because I have decided to change it. For the next lab, I will try to sit down any perhaps draw out a flow chart as my basic guideoline of how I want to implement the program instead of diving straight in. 
+
+4.
+I was having trouble writing customer orders into my file. I initially set a breakpoint at get_item(gdb command: break get_item) to check the return value of ingredients  because that's where I modified my ingredients array, but I did get desired result. I then used the same command, but setting it at get_ingredients this time. This time, I found that after my modification of ingredients array in function call (get_item, which still has the value of ingredients array), ingredients array became null. This result allowed me to pin down to a specific functions and location that's causing the bug.

@@ -1,0 +1,13 @@
+1.
+BY SUBMITTING THIS FILE TO CARMEN, I CERTIFY THAT I STRICTLY ADHERED TO THE TENURES OF THE OHIO STATE UNIVERSITY'S ACADEMIC INTEGRITY POLICY. THIS IS THE README FILE FOR LAB 4.
+
+Student Name: Yoyi Liao
+
+2. 
+Time spent on this lab: 24.5
+
+3.
+I actually found this lab to be a bit easier than lab 3 even though this one is longer. I think partly it's because that I have worked with linked list in SW2 so I already have experence working with it, I just need to overcome the syntax difference. I also found that after lab 3, I'm a lot more confortable working with pointers and malloc() / free(). Hence, I didn't spent as much time on debugging as last lab. I'm happy to see that I'm learning from the class and my work and keep improving. 
+
+4.
+I used to print the outprint of totalRevenue, totalWholesaleCost, currentInvestment directly in the function. However, totalProfit, totalSales, averageProfit also calls these 3 functions. Hence, there was a period of time that there are information in the first 3 functions are being printed out when I called the later 3 functions. When I run gdb, I set a break point at totalProfit (break totalProfit). It stops at the function call for totalRevenue. Then, we step into the totalRevenue, and I see that because we're calling totalRevenue, it'ls printing out what's inside that funciton before returning back to totalProfit. So, I fixed it by making the print statement conditionally and it'll only print things out if it's called directly from function pointer.

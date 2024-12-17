@@ -1,0 +1,47 @@
+1. 
+
+BY SUBMITTING THIS FILE TO CARMEN, I CERTIFY THAT I HAVE STRICTLY ADHERED TO THE TENURES OF THE OHIO STATE UNIVERSITY'S ACADEMIC INTEGRITY POLICY WITH RESPECT TO THIS ASSIGNMENT.
+
+THIS IS THE README FILE FOR LAB 2.
+
+Student name: Yoyi Liao
+
+2.
+
+Total amount of time in hours (approximate) to complete the entrie lab: 18
+
+3.
+
+One thing that troubles me was to figure out what data type should I be using. I was conflicting between whether to use  an int or a char for some of the variables (especially curr_hex) at the beginning, but int turned out to work better, so I chose to use that. Another thing was that my brain had a hard time wrapping around the idea of same number, different interpretation." For example, when writing the decrypting code for hex value, I had a hard time understanding  how I'm getting in this hex value but doing binary operation (shifting bits) on it. 
+
+4. 
+
+(4 digit value: 1010)
+
+(before read and process the 4 digit key)
+gdb command: p /x key
+key value: 0x0
+
+(after read and procecssed the first digit of the key)
+gdb command: p /t key
+key value: 1000 0000
+
+(after read and processed the second digit of the key)
+gdb command: p /t key
+key value: 1000 0000
+
+(after read and processed the third digit of the key)
+gdb command: p /t key
+key value: 1010 0000
+
+(after read and processed the fourth digit of the key)
+gdb command: p /t key
+key value: 1010 0000
+
+(after line return key | (key >> 4) )
+gdb command: p /t key_8_bits
+key value: 1010 1010
+
+5.
+
+I didn't run gdb on bit_decode2, since it produce the correct result when I execute it normally. 

@@ -1,0 +1,32 @@
+1. Disclaimer
+
+BY SUBMITTING THIS FILE TO CARMEN, I CERTIFY THAT I STRICTLY ADHERED TO THE TENURES OF THE OHIO STATE UNIVERSITY'S ACADEMIC INTEGRITY POLICY. THIS IS THE README FILE FOR LAB 6
+
+2. Name
+
+Author: Yoyi Liao
+
+3. Total hour
+
+7
+
+4. Comments 
+
+I think this lab is a bit easier than what I thought it would be. Partially it's because it's the same thing as lab2, but in assembly. Hence, what I did was to split my screen in half, with my lab 2 C code on the left and assembly code on the right. I then just line by line translated my C code into assembly program since I know for sure my C program works. I found it to be a lot eaiser to progress through if I have a reference that I could follow.
+
+5. bugs in C
+
+When I ran the program, I found that the program skip the "enter the hex value" and straight exit out the program. I set a break point in main to see what happened. It turned out that scanf was not working correctly. It didn't actually put scanned things into cur_in so cur_in has the value of 0 when I tprinted out the value of cur_in to see what's inside.
+
+I initially inplemented my create_key function with a loop. This function does worked correctly and returned the right key back to main function, however, it causes scanf to not work correctly. scanf will not scanf the user input hex into cur_in, so cur_in has the value of 0x0. This causes the while loop in main to not function correctly. This is really weird because scanf is a standard C library that's not implemented by either me or professor Jones. I also didn't have anything left in the buffer before calling scanf so it can't be because of that. The main funciton was supplied by professor Jones, and it worked in her program, so it can't be because there's a bug in main as well (also because I fixed this bug later). To fix this, I get rid of the for loop in assembly and just copy and paste  my loop body 4 times. This somehow solved the problem and I have absolutely zero idea why. I went to professor Jones's office hour and she doesn't know why this happened as well so I guess I'll just take this now working program and move on with my day. 
+
+6. bugs in assembly
+
+I had several seg-fault happened to me at the beginning of the progress. I had sample .s file supplied in Piaza opened when I tried to implement my .s program. It really helps with building up the program, however, sometimes they will be using a different size of register than what I'm trying to do for this program. When I tried to mimic the sample file, it segfaulted in my program due to register size not agreeing to the command or to each other. 
+
+A bug that I had encounter was that I didn't increase my loop index correctly in my create_key function (this is before I get rid of the loop all together). I set a break point at create_key and tried to see what happened inside the loop. Using gdb, I saw that I have actually looped through the loop 5 times instead of 4 because I placed the increased command at the end of the loop instead of at the beginning. After I changed that, my loop worked correctly and is returning the correct key.
+
+7. jumping between C and assembly
+
+Yes, I had to jump between C and assembly to figured out what's wrong with my code. There was a time that I can't seems to exited the loop that I had for create_key. I went back and pulled up my C version loop and see what I missed when I translated it from C to assembly. It turned out that it's because I forgot to increase my index in my assembly program and it's causing this infinity loop.    
+

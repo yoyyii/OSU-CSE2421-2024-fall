@@ -1,0 +1,88 @@
+BY SUBMITTING THIS FILE TO CARMEN, I CERTIFY THAT I HAVE STRICTLY ADHERED
+TO THE TENURES OF THE OHIO STATE UNIVERSITY’S ACADEMIC INTEGRITY POLICY
+WITH RESPECT TO THIS ASSIGNMENT.
+
+THIS IS THE README FILE FOR LAB 1.
+
+Name: Yoyi Liao 
+	
+1.	UNIX is proprietary system (i.e. you must purchase a license) while Linux is an Open Source system.  An Open Source system, however, is not always “free”. Why?  
+
+A1: Because you might need to pay for additional support and services build on top of it, making it not necessary free of cost. 
+
+2.	Name another difference between Unix/Linux from your required reading.
+
+A2: one difference is the respond speed to bugs. Since Linux is an open source system, bugs can be reported and fix  by anyone in the user/developer forum and thus resulted in the faster time of bugs resolved. For Unix, however, that is not the case. User has to wait for a while inorder to get the proper bug fixing patch.  
+
+3.	What made UNIX different from all other commercially available software systems when it was initially developed?
+
+A3: Unix only need one portion of code changed per system clled the kernel. Other systems at the time would requires the system to be rewritten everytime. 
+
+4.	What operating system covers the widest range of hardware in the world?
+
+A4: Linux.
+
+5.	Why was the C programming language initially created? 
+
+A5: To help with the development of UNIX. 
+
+6.	What version of the mkdir command is running on stdlinux?  What mkdir option did you use to determine this?
+
+A6: version 8.30. I used "man mkdir" command to get into the manual page of mkdir to see what command I should be using to check the version. Then, I went back to the terminal and run the commnad "mkdir --version" to see the version of mkdir.   
+
+7.	What does the wc -l  instruction do?  The manual page for that instruction says prints the newline count, but what important information does that count tell you?
+
+A7: this tells me the number of lines in the file or input. This could be useful for understand the size of the data. For example, large count of lines might associate with a larger file size. This could also be helpful when writing iterative loops. For example, when I want to loop through all the lines in this file, knowing how many lines the files have will be very useful in setting the loop iterator and to know when to stop. 
+
+8.	Describe one difference between what you observed in the C programming language code in lab1.c and either Java or C++ that you have used before.  Describe one similarity.
+
+A8: One difference is that with C, main could have a return type (int in this case). Whereas in Java, main method does not return anything. 
+
+9.	How is white space (tabs/newlines/returns, spaces, etc.) handled within a C program file?  Do you think this “feature” of C program files is a good thing or a bad thing?  Why?
+
+A9: White space is generally being ignored in the C program file unles it's being used as a line separator. I think this is a good thing because white space exist for human readable purpose, it should not really affect how computer operate.  
+
+10.	When a line of code is printed out after the next command in gdb, that line of code has just finished executing.  True or False?
+
+A10: False. The code printed after the next command is what will be executed next, but have yet to be executed.
+
+11.	What is the value of getchar_return_value at GDB item #4?  Is this what you expected to see?
+
+A11: Yes, because the first character of 15 is 1, which has the ASCII value of 49, which is what is displayed here.
+
+12.	What is the value of maxEntries variable at GDB item #5?
+
+A12: 53.
+
+13.	What were the 15 hexadecimal values in the variable getchar_return_value as it read in each successive value from input?
+
+A13: 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x20, 0x70, 0x65, 0x61, 0x63, 0x68, 0x65, 0x73
+
+14.	What is the relationship between the ASCII value of a digit and the actual value it represents?
+
+A14: ASCII Value of digit = Actual value of Digit + ASCII Value of 0 (48)
+
+15.	How does the output of the program change at GDB item #7 from the output seen prior?
+
+A15: It chaged to "@" because "@" has the ASCII value of 64.
+
+16.	Answer the questions asked in item #10 here.
+
+	Are these values what you expected to see?  If so, why?  If not, what did you observe/learn?
+
+A16:  Yes, these values are what I'm expecting. Take lab1.input1, for its  maxEntries, I'm expecting to get the value of the first line. I  get 0xa (hexa representation of 10) for input1, which is indeed the first value in the file. As of the actual output, I got "12345 ABCD", which is also what I'm expected. The program should output the first ten character followed by "10", and the program did indeed did that. Notice that "\n" is being counted as one character and thus my final character, "E", is not being shown here, as it will be counted as the 11th character.
+
+17.	Describe how you created the breakpoint in your program while using ddd instead of gdb.
+
+A17: move to the line that you want to set the breakpoint. Then, right click the mouse, click on "set Breakpoint" to set breakpoint at where you want to set. 
+
+18.	Edit the Makefile.  On the line that starts out "gcc_opt =" close to the top of the file,  put " -D DEBUG" (do not put the double quotes in the file).  Now say "touch lab1.c". Re-exeute the make command. Rerun the program using 6 and banana.  Does the output change?  If so, how?
+
+A18: Yes. After the -D DEBUG being added, after "banana" being output like originally, there's also this "returned from function" line being added in the very end.
+
+19.	What do you think of the make command?  [2-3 sentences]
+
+A19: I think make command is very convient to use since we just have to set up what we want to make initially instead of retyping the entire command everytime and to manually keeping track of whether we have changed a file or not. With that being said, it is important that we set up the Makefile correctly initially, otherwise we could be not doing the right thing to our files the whole time without realizing it. 
+
+
+
